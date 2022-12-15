@@ -21,3 +21,5 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
 fun Any?.println() = println(this)
 
 fun String.isNumeric() = this.filter { it.isDigit() }.length == this.length
+
+fun <T> List<List<T>>.transposed(): List<List<T>> = List(this.first().size) { i -> this.mapNotNull { it.getOrNull(i) } }
