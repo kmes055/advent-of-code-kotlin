@@ -23,3 +23,7 @@ fun Any?.println() = println(this)
 fun String.isNumeric() = this.filter { it.isDigit() }.length == this.length
 
 fun <T> List<List<T>>.transposed(): List<List<T>> = List(this.first().size) { i -> this.mapNotNull { it.getOrNull(i) } }
+
+fun checkEquals(actual: Any, expected: Any) {
+    if (actual != expected) throw IllegalStateException("Check failed. expedted: $expected, actual: $actual")
+}
