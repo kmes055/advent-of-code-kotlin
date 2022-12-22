@@ -1,6 +1,7 @@
 import java.io.File
 import java.math.BigInteger
 import java.security.MessageDigest
+import java.util.Locale
 
 /**
  * Reads lines from the given input txt file.
@@ -27,3 +28,6 @@ fun <T> List<List<T>>.transposed(): List<List<T>> = List(this.first().size) { i 
 fun checkEquals(actual: Any, expected: Any) {
     if (actual != expected) throw IllegalStateException("Check failed. expedted: $expected, actual: $actual")
 }
+fun gcd(a: Long, b: Long): Long = if (a.mod(b) == 0L) b else gcd(b, a.mod(b))
+
+fun lcm(a: Long, b: Long): Long = a * (b / gcd(a, b))
