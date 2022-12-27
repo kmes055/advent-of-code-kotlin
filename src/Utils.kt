@@ -31,3 +31,5 @@ fun checkEquals(actual: Any, expected: Any) {
 fun gcd(a: Long, b: Long): Long = if (a.mod(b) == 0L) b else gcd(b, a.mod(b))
 
 fun lcm(a: Long, b: Long): Long = a * (b / gcd(a, b))
+
+operator fun <E> List<List<E>>.get(point: Pair<Int, Int>): E = this[point.first][point.second]

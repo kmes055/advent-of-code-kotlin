@@ -101,7 +101,3 @@ fun main() {
     part1(input).println()
     part2(input).println()
 }
-
-private operator fun <E> List<List<E>>.get(point: Pair<Int, Int>): E = this[point.first][point.second]
-
-
